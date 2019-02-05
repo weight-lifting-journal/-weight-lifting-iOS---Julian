@@ -12,11 +12,24 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        styleButton()
+        styleTextField()
+        
     }
     
+    func styleButton() {
+        loginButton.layer.cornerRadius = 25
+        loginButton.backgroundColor = .blue
+        loginButton.setTitleColor(.white, for: .normal)
+        
+    }
 
+    func styleTextField() {
+        emailTextField.layer.cornerRadius = 20
+        passwordTextField.layer.cornerRadius = 20
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +39,13 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+ 
+    // MARK: - Properties
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    
 }

@@ -12,11 +12,14 @@ class SignupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        styleButton()
     }
     
-
+    func styleButton() {
+        signupButton.layer.cornerRadius = 25
+        signupButton.backgroundColor = .blue
+        signupButton.setTitleColor(.white, for: .normal)
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +30,11 @@ class SignupViewController: UIViewController {
     }
     */
 
+    // MARK: - Properties
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signupButton: UIButton!
+    
 }
