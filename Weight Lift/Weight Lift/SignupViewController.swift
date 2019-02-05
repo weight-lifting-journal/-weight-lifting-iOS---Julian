@@ -36,8 +36,7 @@ class SignupViewController: UIViewController {
     @IBAction func signupButtonTapped(_ sender: UIButton) {
         
     }
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
-    }
+    @IBAction func cancelButtonTapped(_ sender: UIButton) { navigationController?.popViewController(animated: true)    }
     
     // MARK: - Properties
     

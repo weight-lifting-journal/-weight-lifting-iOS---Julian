@@ -8,10 +8,18 @@
 
 import Foundation
 
-static let endpoint = ""
 
 class NetworkController {
     
-
+    static let baseURL = URL(string: "https://weightliftingjournallambda.herokuapp.com/")!
     
+    
+    static func signupUser() {
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+    }
+    
+
 }
