@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		C4C36C7C2209399A003ADF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C7B2209399A003ADF72 /* AppDelegate.swift */; };
-		C4C36C7E2209399A003ADF72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C7D2209399A003ADF72 /* ViewController.swift */; };
 		C4C36C812209399A003ADF72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C36C7F2209399A003ADF72 /* Main.storyboard */; };
 		C4C36C832209399B003ADF72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C36C822209399B003ADF72 /* Assets.xcassets */; };
 		C4C36C862209399B003ADF72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C36C842209399B003ADF72 /* LaunchScreen.storyboard */; };
 		C4C36C8E22093E62003ADF72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C8D22093E62003ADF72 /* LoginViewController.swift */; };
+		C4C36C90220946EA003ADF72 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C8F220946EA003ADF72 /* SignupViewController.swift */; };
+		C4C36C9222094823003ADF72 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9122094823003ADF72 /* HomeTabBarController.swift */; };
+		C4C36C9422094C4A003ADF72 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */; };
+		C4C36C9622094CA3003ADF72 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */; };
+		C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */; };
+		C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C4C36C782209399A003ADF72 /* Weight Lift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight Lift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C36C7B2209399A003ADF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4C36C7D2209399A003ADF72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4C36C802209399A003ADF72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4C36C822209399B003ADF72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4C36C852209399B003ADF72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4C36C872209399B003ADF72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C36C8D22093E62003ADF72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C4C36C8F220946EA003ADF72 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		C4C36C9122094823003ADF72 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
+		C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				C4C36C7B2209399A003ADF72 /* AppDelegate.swift */,
-				C4C36C7D2209399A003ADF72 /* ViewController.swift */,
 				C4C36C7F2209399A003ADF72 /* Main.storyboard */,
+				C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */,
+				C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */,
+				C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */,
+				C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */,
+				C4C36C9122094823003ADF72 /* HomeTabBarController.swift */,
+				C4C36C8F220946EA003ADF72 /* SignupViewController.swift */,
 				C4C36C8D22093E62003ADF72 /* LoginViewController.swift */,
 				C4C36C822209399B003ADF72 /* Assets.xcassets */,
 				C4C36C842209399B003ADF72 /* LaunchScreen.storyboard */,
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */,
 				C4C36C8E22093E62003ADF72 /* LoginViewController.swift in Sources */,
-				C4C36C7E2209399A003ADF72 /* ViewController.swift in Sources */,
+				C4C36C90220946EA003ADF72 /* SignupViewController.swift in Sources */,
+				C4C36C9622094CA3003ADF72 /* AddEntryViewController.swift in Sources */,
 				C4C36C7C2209399A003ADF72 /* AppDelegate.swift in Sources */,
+				C4C36C9222094823003ADF72 /* HomeTabBarController.swift in Sources */,
+				C4C36C9422094C4A003ADF72 /* SettingsViewController.swift in Sources */,
+				C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

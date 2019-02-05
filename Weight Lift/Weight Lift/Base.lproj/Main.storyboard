@@ -18,14 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sL-20-XF6">
-                                <rect key="frame" x="150" y="485" width="46" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zfy-Bw-D15">
+                                <rect key="frame" x="48" y="381" width="278" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7RL-oV-Jpx">
+                                <rect key="frame" x="48" y="294" width="278" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEy-H3-bOf">
+                                <rect key="frame" x="212" y="545" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Signup"/>
                                 <connections>
-                                    <segue destination="VuQ-dO-oXh" kind="show" id="ubb-9X-xAH"/>
+                                    <segue destination="VuQ-dO-oXh" kind="show" id="QM5-qJ-Riw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dj-Hh-lIu">
+                                <rect key="frame" x="124" y="465" width="136" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New user?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pp9-Ho-J46">
+                                <rect key="frame" x="124" y="545" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -34,25 +60,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="-548"/>
+            <point key="canvasLocation" x="1064.8" y="-548.27586206896558"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up-->
         <scene sceneID="tks-8F-noB">
             <objects>
-                <viewController id="VuQ-dO-oXh" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="VuQ-dO-oXh" customClass="SignupViewController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R82-8U-gFD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjF-UD-Tfv">
-                                <rect key="frame" x="164" y="509" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="U1o-OA-JgX" kind="show" id="rhb-Ys-BoS"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="IWa-cE-pO1"/>
                     </view>
@@ -61,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1962" y="-548"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Workout Entries-->
         <scene sceneID="nlp-c7-Yqm">
             <objects>
-                <tableViewController id="uGj-MF-2ef" sceneMemberID="viewController">
+                <tableViewController id="uGj-MF-2ef" customClass="EntriesTableViewController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MUe-3h-XFL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,16 +103,16 @@
                             <outlet property="delegate" destination="uGj-MF-2ef" id="uox-0C-ZuI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="uY7-fn-AvK"/>
+                    <navigationItem key="navigationItem" title="Workout Entries" id="uY7-fn-AvK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRD-EP-ZKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1481" y="1960"/>
         </scene>
-        <!--View Controller-->
+        <!--Entries Detail View Controller-->
         <scene sceneID="V5j-G4-iXy">
             <objects>
-                <viewController id="t4t-i2-ajd" sceneMemberID="viewController">
+                <viewController id="t4t-i2-ajd" customClass="EntriesDetailViewController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCW-7H-8Kz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,15 +122,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKy-8N-Fkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2716" y="1967"/>
+            <point key="canvasLocation" x="2658" y="1960"/>
         </scene>
         <!--Entries-->
         <scene sceneID="Pyq-xH-udn">
             <objects>
                 <navigationController id="rRa-Db-M5a" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Entries" id="zD5-ui-Qb5"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BhP-nX-8rf">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="BhP-nX-8rf">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -128,7 +144,7 @@
         <!--Settings-->
         <scene sceneID="qlt-wY-JNn">
             <objects>
-                <viewController id="XgI-pn-n8J" sceneMemberID="viewController">
+                <viewController id="XgI-pn-n8J" customClass="SettingsViewController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nfn-7y-Ng0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,10 +157,10 @@
             </objects>
             <point key="canvasLocation" x="2641" y="1141"/>
         </scene>
-        <!--Add Entry-->
+        <!--Add Workout-->
         <scene sceneID="hN7-1j-1CY">
             <objects>
-                <viewController id="gwh-qV-Yut" sceneMemberID="viewController">
+                <viewController title="Add Workout" id="gwh-qV-Yut" customClass="AddEntryViewController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPI-LJ-Ilu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="404" y="1141"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Weight Lift?-->
         <scene sceneID="Jda-82-ygF">
             <objects>
-                <tabBarController id="U1o-OA-JgX" sceneMemberID="viewController">
+                <tabBarController title="Weight Lift?" id="U1o-OA-JgX" customClass="HomeTabBarController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DgN-dM-bEO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
