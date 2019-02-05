@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+static let endpoint = ""
+
+class NetworkController {
+    
+
+    
+}

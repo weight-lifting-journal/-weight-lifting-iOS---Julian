@@ -19,6 +19,9 @@ class SignupViewController: UIViewController {
         signupButton.layer.cornerRadius = 25
         signupButton.backgroundColor = .blue
         signupButton.setTitleColor(.white, for: .normal)
+        cancelButton.layer.cornerRadius = 25
+        cancelButton.backgroundColor = .red
+        cancelButton.setTitleColor(.white, for: .normal)
     }
     /*
     // MARK: - Navigation
@@ -29,12 +32,19 @@ class SignupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func signupButtonTapped(_ sender: UIButton) {
+        
+    }
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+    }
+    
     // MARK: - Properties
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
 }

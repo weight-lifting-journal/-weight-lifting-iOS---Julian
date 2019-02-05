@@ -109,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ObN-7q-teZ">
-                                <rect key="frame" x="48" y="249" width="278" height="50"/>
+                                <rect key="frame" x="48" y="227" width="278" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="w14-vV-0yp"/>
                                 </constraints>
@@ -118,7 +118,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter a username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ihe-IS-QFK">
-                                <rect key="frame" x="48" y="331" width="278" height="50"/>
+                                <rect key="frame" x="48" y="309" width="278" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dVe-H1-127"/>
                                 </constraints>
@@ -127,7 +127,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter a password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yu2-c6-gfo">
-                                <rect key="frame" x="48" y="411" width="278" height="50"/>
+                                <rect key="frame" x="48" y="389" width="278" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vDx-el-rWf"/>
                                 </constraints>
@@ -136,12 +136,27 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZI-gB-chn">
-                                <rect key="frame" x="119" y="488" width="136" height="59"/>
+                                <rect key="frame" x="119" y="466" width="136" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="Zjn-pB-p64"/>
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
                                 <state key="normal" title="Signup"/>
+                                <connections>
+                                    <action selector="signupButtonTapped:" destination="VuQ-dO-oXh" eventType="touchUpInside" id="wKX-sr-EUD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0O-uF-LHB">
+                                <rect key="frame" x="119" y="541" width="136" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="iVU-Yl-MwC"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="15" minY="15" maxX="15" maxY="15"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="VuQ-dO-oXh" eventType="touchUpInside" id="j8y-AT-RYt"/>
+                                    <action selector="signupButtonTapped:" destination="VuQ-dO-oXh" eventType="touchUpInside" id="Bzo-HV-FsT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,10 +166,13 @@
                             <constraint firstItem="sZI-gB-chn" firstAttribute="top" secondItem="yu2-c6-gfo" secondAttribute="bottom" constant="27" id="Hux-BF-vt5"/>
                             <constraint firstItem="IWa-cE-pO1" firstAttribute="trailing" secondItem="Ihe-IS-QFK" secondAttribute="trailing" constant="49" id="K6p-Qh-dFh"/>
                             <constraint firstItem="Ihe-IS-QFK" firstAttribute="top" secondItem="ObN-7q-teZ" secondAttribute="bottom" constant="32" id="MPi-h0-Ia5"/>
+                            <constraint firstItem="IWa-cE-pO1" firstAttribute="bottom" secondItem="A0O-uF-LHB" secondAttribute="bottom" constant="178" id="S55-al-jTa"/>
                             <constraint firstItem="sZI-gB-chn" firstAttribute="leading" secondItem="IWa-cE-pO1" secondAttribute="leading" constant="119" id="TOC-8v-TQv"/>
+                            <constraint firstItem="IWa-cE-pO1" firstAttribute="trailing" secondItem="A0O-uF-LHB" secondAttribute="trailing" constant="120" id="Xsm-A8-n1q"/>
                             <constraint firstItem="Ihe-IS-QFK" firstAttribute="leading" secondItem="IWa-cE-pO1" secondAttribute="leading" constant="48" id="aWU-VD-3Zd"/>
                             <constraint firstItem="IWa-cE-pO1" firstAttribute="trailing" secondItem="sZI-gB-chn" secondAttribute="trailing" constant="120" id="atU-Zq-mmp"/>
-                            <constraint firstItem="IWa-cE-pO1" firstAttribute="bottom" secondItem="sZI-gB-chn" secondAttribute="bottom" constant="231" id="eXv-tM-3Cf"/>
+                            <constraint firstItem="A0O-uF-LHB" firstAttribute="top" secondItem="sZI-gB-chn" secondAttribute="bottom" constant="16" id="c1m-Y6-doh"/>
+                            <constraint firstItem="A0O-uF-LHB" firstAttribute="leading" secondItem="IWa-cE-pO1" secondAttribute="leading" constant="119" id="dU0-8k-hAA"/>
                             <constraint firstItem="IWa-cE-pO1" firstAttribute="trailing" secondItem="ObN-7q-teZ" secondAttribute="trailing" constant="49" id="erZ-Ch-NiL"/>
                             <constraint firstItem="yu2-c6-gfo" firstAttribute="leading" secondItem="IWa-cE-pO1" secondAttribute="leading" constant="48" id="mys-cc-UgG"/>
                             <constraint firstItem="IWa-cE-pO1" firstAttribute="trailing" secondItem="yu2-c6-gfo" secondAttribute="trailing" constant="49" id="tSO-pZ-rHH"/>
@@ -162,6 +180,7 @@
                         <viewLayoutGuide key="safeArea" id="IWa-cE-pO1"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="A0O-uF-LHB" id="YfI-w9-Q4K"/>
                         <outlet property="emailTextField" destination="ObN-7q-teZ" id="Fjj-Hh-oV4"/>
                         <outlet property="passwordTextField" destination="yu2-c6-gfo" id="XkS-or-rFQ"/>
                         <outlet property="signupButton" destination="sZI-gB-chn" id="2ch-Dk-O4S"/>
@@ -170,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1zQ-VC-6mQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="-548"/>
+            <point key="canvasLocation" x="1960.8" y="-548.27586206896558"/>
         </scene>
         <!--Workout Entries-->
         <scene sceneID="nlp-c7-Yqm">

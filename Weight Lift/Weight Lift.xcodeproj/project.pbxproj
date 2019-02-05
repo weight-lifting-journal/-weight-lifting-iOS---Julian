@@ -18,6 +18,7 @@
 		C4C36C9622094CA3003ADF72 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */; };
 		C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */; };
 		C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */; };
+		C4C36C9C2209F05F003ADF72 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9B2209F05F003ADF72 /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		C4C36C9B2209F05F003ADF72 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */,
 				C4C36C9122094823003ADF72 /* HomeTabBarController.swift */,
 				C4C36C8F220946EA003ADF72 /* SignupViewController.swift */,
+				C4C36C9B2209F05F003ADF72 /* NetworkController.swift */,
 				C4C36C8D22093E62003ADF72 /* LoginViewController.swift */,
 				C4C36C822209399B003ADF72 /* Assets.xcassets */,
 				C4C36C842209399B003ADF72 /* LaunchScreen.storyboard */,
@@ -161,6 +164,7 @@
 				C4C36C9222094823003ADF72 /* HomeTabBarController.swift in Sources */,
 				C4C36C9422094C4A003ADF72 /* SettingsViewController.swift in Sources */,
 				C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */,
+				C4C36C9C2209F05F003ADF72 /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
