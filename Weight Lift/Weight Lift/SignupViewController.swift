@@ -34,8 +34,38 @@ class SignupViewController: UIViewController {
     */
     
     @IBAction func signupButtonTapped(_ sender: UIButton) {
+        print("Signup button tapped")
         
+        if (emailTextField.text?.isEmpty)! || (usernameTextField.text?.isEmpty)! || (passwordTextField.text?.isEmpty)! {
+            displayMessage(userMessage: "All fields are required.")
+            return
+        }
+        
+        let url = URL(string: "https://weightliftingjournallambda.herokuapp.com/users/register")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+        let postString = ["email": emailTextField.text, "username": usernameTextField.text, "password": passwordTextField.text]
     }
+    
+    func displayMessage(userMessage: String) -> Void {
+        DispatchQueue.main.async
+            {
+                let alertController = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+                    print("Ok button tapped")
+                    DispatchQueue.main.async
+                        {
+                            self.dismiss(animated: true, completion: nil)
+                    }
+                }
+                alertController.addAction(action)
+                self.present(alertController, animated: true, completion:nil)
+        }
+    }
+    
     @IBAction func cancelButtonTapped(_ sender: UIButton) { navigationController?.popViewController(animated: true)    }
     
     // MARK: - Properties
