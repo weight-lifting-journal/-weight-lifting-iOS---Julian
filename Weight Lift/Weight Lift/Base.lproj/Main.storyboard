@@ -26,7 +26,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R4q-b7-bO9"/>
-                                    <segue destination="ohx-7r-ANc" kind="show" id="bEJ-EW-NJ9"/>
+                                    <segue destination="uGj-MF-2ef" kind="show" id="tqt-Cq-ZEy"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-EE-Ub0" customClass="CustomTextField" customModule="Weight_Lift" customModuleProvider="target">
@@ -256,7 +256,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="l38-1K-L4G"/>
                     <navigationItem key="navigationItem" title="Add Journal" id="uY7-fn-AvK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyU-Fw-8gJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyU-Fw-8gJ">
+                            <connections>
+                                <segue destination="ohx-7r-ANc" kind="show" id="iFF-fw-xzA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRD-EP-ZKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,7 +336,70 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSZ-q6-Hga" customClass="CustomView" customModule="Weight_Lift" customModuleProvider="target">
                                 <rect key="frame" x="47" y="256" width="281" height="312"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a journal ID (number)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sI1-Zf-Yhz">
+                                        <rect key="frame" x="30" y="51" width="221" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ioI-iC-zSx"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mwQ-Sc-n3V"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter body region" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP6-HM-olO">
+                                        <rect key="frame" x="30" y="219" width="221" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fvP-CQ-q6O"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter date of workout" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hdO-dO-sjz">
+                                        <rect key="frame" x="30" y="135" width="221" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="eFA-6v-Kdb"/>
+                                            <constraint firstAttribute="height" constant="30" id="q6R-Lj-4TL"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Journal ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRZ-xc-fd3">
+                                        <rect key="frame" x="30" y="30" width="82" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0Q-K8-wft">
+                                        <rect key="frame" x="30" y="115" width="41" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Region:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyb-t3-qDq">
+                                        <rect key="frame" x="29" y="199" width="127" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="sI1-Zf-Yhz" secondAttribute="trailing" constant="30" id="H7J-wK-mn2"/>
+                                    <constraint firstItem="sI1-Zf-Yhz" firstAttribute="top" secondItem="gSZ-q6-Hga" secondAttribute="top" constant="51" id="NgJ-hx-slZ"/>
+                                    <constraint firstItem="hdO-dO-sjz" firstAttribute="leading" secondItem="gSZ-q6-Hga" secondAttribute="leading" constant="30" id="TKO-gt-UDX"/>
+                                    <constraint firstItem="sI1-Zf-Yhz" firstAttribute="leading" secondItem="gSZ-q6-Hga" secondAttribute="leading" constant="30" id="VuO-Nr-Afr"/>
+                                    <constraint firstAttribute="trailing" secondItem="rP6-HM-olO" secondAttribute="trailing" constant="30" id="adK-85-ipL"/>
+                                    <constraint firstItem="rP6-HM-olO" firstAttribute="top" secondItem="hdO-dO-sjz" secondAttribute="bottom" constant="54" id="eri-x2-blg"/>
+                                    <constraint firstItem="rP6-HM-olO" firstAttribute="leading" secondItem="gSZ-q6-Hga" secondAttribute="leading" constant="30" id="qVj-Hb-6PI"/>
+                                    <constraint firstItem="hdO-dO-sjz" firstAttribute="top" secondItem="sI1-Zf-Yhz" secondAttribute="bottom" constant="54" id="r9a-oS-M7d"/>
+                                    <constraint firstAttribute="trailing" secondItem="hdO-dO-sjz" secondAttribute="trailing" constant="30" id="yFS-lx-D5d"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks good?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxb-kl-B9v">
                                 <rect key="frame" x="117" y="593" width="98" height="21"/>
@@ -433,6 +500,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Journal ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPj-s5-c88">
+                                        <rect key="frame" x="30" y="54" width="82" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exercise:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiU-RG-xoK">
                                         <rect key="frame" x="30" y="123" width="69" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -440,8 +514,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Journal ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPj-s5-c88">
-                                        <rect key="frame" x="30" y="54" width="82" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-8x-MPC">
+                                        <rect key="frame" x="30" y="191" width="43" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEu-5j-cP4">
+                                        <rect key="frame" x="30" y="259" width="39" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXS-jT-7Li">
+                                        <rect key="frame" x="31" y="329" width="59" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -512,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKy-8N-Fkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5188" y="354"/>
+            <point key="canvasLocation" x="5188" y="353.94088669950742"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qlt-wY-JNn">
@@ -573,6 +661,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mHU-vf-eMd"/>
-        <segue reference="bEJ-EW-NJ9"/>
+        <segue reference="rTW-Nv-uI3"/>
+        <segue reference="tqt-Cq-ZEy"/>
     </inferredMetricsTieBreakers>
 </document>
