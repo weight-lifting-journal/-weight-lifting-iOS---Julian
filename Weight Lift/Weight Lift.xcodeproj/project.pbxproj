@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4A26F76220CF42500AEC31A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26F75220CF42500AEC31A /* CustomButton.swift */; };
+		C4A26F78220CF6B100AEC31A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26F77220CF6B100AEC31A /* CustomTextField.swift */; };
+		C4A26F7A220D0C6200AEC31A /* UIColor + CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A26F79220D0C6200AEC31A /* UIColor + CustomColor.swift */; };
 		C4C36C7C2209399A003ADF72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C7B2209399A003ADF72 /* AppDelegate.swift */; };
 		C4C36C812209399A003ADF72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C36C7F2209399A003ADF72 /* Main.storyboard */; };
 		C4C36C832209399B003ADF72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C36C822209399B003ADF72 /* Assets.xcassets */; };
@@ -19,9 +22,14 @@
 		C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */; };
 		C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */; };
 		C4C36C9C2209F05F003ADF72 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9B2209F05F003ADF72 /* NetworkController.swift */; };
+		C4C36C9E220B681E003ADF72 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9D220B681E003ADF72 /* Exercise.swift */; };
+		C4C3F58F220E0B270018DE5B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3F58E220E0B270018DE5B /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4A26F75220CF42500AEC31A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C4A26F77220CF6B100AEC31A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		C4A26F79220D0C6200AEC31A /* UIColor + CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + CustomColor.swift"; sourceTree = "<group>"; };
 		C4C36C782209399A003ADF72 /* Weight Lift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight Lift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4C36C7B2209399A003ADF72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4C36C802209399A003ADF72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +44,8 @@
 		C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
 		C4C36C9B2209F05F003ADF72 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		C4C36C9D220B681E003ADF72 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		C4C3F58E220E0B270018DE5B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +80,18 @@
 			children = (
 				C4C36C7B2209399A003ADF72 /* AppDelegate.swift */,
 				C4C36C7F2209399A003ADF72 /* Main.storyboard */,
+				C4A26F79220D0C6200AEC31A /* UIColor + CustomColor.swift */,
 				C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */,
 				C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */,
+				C4C3F58E220E0B270018DE5B /* CustomView.swift */,
+				C4A26F75220CF42500AEC31A /* CustomButton.swift */,
+				C4A26F77220CF6B100AEC31A /* CustomTextField.swift */,
 				C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */,
 				C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */,
 				C4C36C9122094823003ADF72 /* HomeTabBarController.swift */,
 				C4C36C8F220946EA003ADF72 /* SignupViewController.swift */,
 				C4C36C9B2209F05F003ADF72 /* NetworkController.swift */,
+				C4C36C9D220B681E003ADF72 /* Exercise.swift */,
 				C4C36C8D22093E62003ADF72 /* LoginViewController.swift */,
 				C4C36C822209399B003ADF72 /* Assets.xcassets */,
 				C4C36C842209399B003ADF72 /* LaunchScreen.storyboard */,
@@ -156,12 +171,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4A26F7A220D0C6200AEC31A /* UIColor + CustomColor.swift in Sources */,
 				C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */,
 				C4C36C8E22093E62003ADF72 /* LoginViewController.swift in Sources */,
+				C4C3F58F220E0B270018DE5B /* CustomView.swift in Sources */,
 				C4C36C90220946EA003ADF72 /* SignupViewController.swift in Sources */,
 				C4C36C9622094CA3003ADF72 /* AddEntryViewController.swift in Sources */,
 				C4C36C7C2209399A003ADF72 /* AppDelegate.swift in Sources */,
+				C4C36C9E220B681E003ADF72 /* Exercise.swift in Sources */,
 				C4C36C9222094823003ADF72 /* HomeTabBarController.swift in Sources */,
+				C4A26F76220CF42500AEC31A /* CustomButton.swift in Sources */,
+				C4A26F78220CF6B100AEC31A /* CustomTextField.swift in Sources */,
 				C4C36C9422094C4A003ADF72 /* SettingsViewController.swift in Sources */,
 				C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */,
 				C4C36C9C2209F05F003ADF72 /* NetworkController.swift in Sources */,

@@ -86,5 +86,7 @@ class EntriesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Properties
 
 }
