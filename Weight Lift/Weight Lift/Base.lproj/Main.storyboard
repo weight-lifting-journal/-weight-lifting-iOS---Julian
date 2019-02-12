@@ -633,6 +633,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveCard:" destination="t4t-i2-ajd" eventType="touchUpInside" id="phL-EZ-UIY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.20784313725490194" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -649,6 +652,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h8R-oO-GTV"/>
                     </view>
+                    <connections>
+                        <outlet property="cardExerciseTextField" destination="673-r0-YTN" id="21B-de-pXX"/>
+                        <outlet property="cardJournalTextField" destination="3no-Ba-7qV" id="FBf-7G-EbU"/>
+                        <outlet property="cardRepsTextField" destination="snd-S1-eco" id="FRC-cg-5ea"/>
+                        <outlet property="cardSaveButton" destination="37Y-X2-1gd" id="PsX-D9-9zP"/>
+                        <outlet property="cardSetsTextField" destination="Cg6-Lo-n1e" id="VTZ-Jq-SJl"/>
+                        <outlet property="cardWeightTextField" destination="y42-RT-lad" id="1Md-Of-Yas"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKy-8N-Fkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

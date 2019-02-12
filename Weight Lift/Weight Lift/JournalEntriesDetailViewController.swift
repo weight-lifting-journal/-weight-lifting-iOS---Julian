@@ -16,7 +16,10 @@ class JournalEntriesDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveJournal(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +29,12 @@ class JournalEntriesDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Properties
+    
+    @IBOutlet weak var journalTextField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var regionTextField: UITextField!
+    
+    @IBOutlet weak var saveButton: UIButton!
 }

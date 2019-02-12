@@ -25,7 +25,7 @@ class NetworkController {
     }
     
     
-    static func createWorkoutJournal(withJournalID id: Int)-> JournalsObj {
+    static func createWorkoutJournal(withJournalsObj JournalsObj: [JournalsObj])-> JournalsObj {
         var request = URLRequest(url: baseURL)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "content-type")
