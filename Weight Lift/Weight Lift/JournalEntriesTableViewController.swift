@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntriesTableViewController: UITableViewController {
+class JournalEntriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

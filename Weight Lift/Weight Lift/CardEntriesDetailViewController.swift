@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEntryViewController: UIViewController {
+class CardEntriesDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

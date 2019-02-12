@@ -16,14 +16,15 @@
 		C4C36C862209399B003ADF72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4C36C842209399B003ADF72 /* LaunchScreen.storyboard */; };
 		C4C36C8E22093E62003ADF72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C8D22093E62003ADF72 /* LoginViewController.swift */; };
 		C4C36C90220946EA003ADF72 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C8F220946EA003ADF72 /* SignupViewController.swift */; };
-		C4C36C9222094823003ADF72 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9122094823003ADF72 /* HomeTabBarController.swift */; };
-		C4C36C9422094C4A003ADF72 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */; };
-		C4C36C9622094CA3003ADF72 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */; };
-		C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */; };
-		C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */; };
+		C4C36C9622094CA3003ADF72 /* CardEntriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9522094CA3003ADF72 /* CardEntriesDetailViewController.swift */; };
+		C4C36C9822094CFF003ADF72 /* JournalEntriesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9722094CFF003ADF72 /* JournalEntriesDetailViewController.swift */; };
+		C4C36C9A22094D63003ADF72 /* JournalEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9922094D63003ADF72 /* JournalEntriesTableViewController.swift */; };
 		C4C36C9C2209F05F003ADF72 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9B2209F05F003ADF72 /* NetworkController.swift */; };
 		C4C36C9E220B681E003ADF72 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C36C9D220B681E003ADF72 /* Exercise.swift */; };
 		C4C3F58F220E0B270018DE5B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3F58E220E0B270018DE5B /* CustomView.swift */; };
+		C4C3F59422124DD10018DE5B /* CardEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3F59322124DD10018DE5B /* CardEntriesTableViewController.swift */; };
+		C4C3F59622124DED0018DE5B /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3F59522124DED0018DE5B /* CardTableViewCell.swift */; };
+		C4C3F59822124DFD0018DE5B /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C3F59722124DFD0018DE5B /* JournalTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,14 +39,15 @@
 		C4C36C872209399B003ADF72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4C36C8D22093E62003ADF72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C4C36C8F220946EA003ADF72 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		C4C36C9122094823003ADF72 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
-		C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
-		C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
-		C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesTableViewController.swift; sourceTree = "<group>"; };
+		C4C36C9522094CA3003ADF72 /* CardEntriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntriesDetailViewController.swift; sourceTree = "<group>"; };
+		C4C36C9722094CFF003ADF72 /* JournalEntriesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntriesDetailViewController.swift; sourceTree = "<group>"; };
+		C4C36C9922094D63003ADF72 /* JournalEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntriesTableViewController.swift; sourceTree = "<group>"; };
 		C4C36C9B2209F05F003ADF72 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		C4C36C9D220B681E003ADF72 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		C4C3F58E220E0B270018DE5B /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		C4C3F59322124DD10018DE5B /* CardEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEntriesTableViewController.swift; sourceTree = "<group>"; };
+		C4C3F59522124DED0018DE5B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		C4C3F59722124DFD0018DE5B /* JournalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,24 +82,33 @@
 			children = (
 				C4C36C7B2209399A003ADF72 /* AppDelegate.swift */,
 				C4C36C7F2209399A003ADF72 /* Main.storyboard */,
-				C4A26F79220D0C6200AEC31A /* UIColor + CustomColor.swift */,
-				C4C36C9722094CFF003ADF72 /* EntriesViewController.swift */,
-				C4C36C9922094D63003ADF72 /* EntriesTableViewController.swift */,
-				C4C3F58E220E0B270018DE5B /* CustomView.swift */,
-				C4A26F75220CF42500AEC31A /* CustomButton.swift */,
-				C4A26F77220CF6B100AEC31A /* CustomTextField.swift */,
-				C4C36C9522094CA3003ADF72 /* AddEntryViewController.swift */,
-				C4C36C9322094C4A003ADF72 /* SettingsViewController.swift */,
-				C4C36C9122094823003ADF72 /* HomeTabBarController.swift */,
-				C4C36C8F220946EA003ADF72 /* SignupViewController.swift */,
+				C4C3F592220F80130018DE5B /* Appearance Helper */,
+				C4C36C9722094CFF003ADF72 /* JournalEntriesDetailViewController.swift */,
+				C4C36C9922094D63003ADF72 /* JournalEntriesTableViewController.swift */,
+				C4C36C9522094CA3003ADF72 /* CardEntriesDetailViewController.swift */,
+				C4C3F59322124DD10018DE5B /* CardEntriesTableViewController.swift */,
+				C4C3F59522124DED0018DE5B /* CardTableViewCell.swift */,
+				C4C3F59722124DFD0018DE5B /* JournalTableViewCell.swift */,
 				C4C36C9B2209F05F003ADF72 /* NetworkController.swift */,
 				C4C36C9D220B681E003ADF72 /* Exercise.swift */,
+				C4C36C8F220946EA003ADF72 /* SignupViewController.swift */,
 				C4C36C8D22093E62003ADF72 /* LoginViewController.swift */,
 				C4C36C822209399B003ADF72 /* Assets.xcassets */,
 				C4C36C842209399B003ADF72 /* LaunchScreen.storyboard */,
 				C4C36C872209399B003ADF72 /* Info.plist */,
 			);
 			path = "Weight Lift";
+			sourceTree = "<group>";
+		};
+		C4C3F592220F80130018DE5B /* Appearance Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C4A26F79220D0C6200AEC31A /* UIColor + CustomColor.swift */,
+				C4C3F58E220E0B270018DE5B /* CustomView.swift */,
+				C4A26F75220CF42500AEC31A /* CustomButton.swift */,
+				C4A26F77220CF6B100AEC31A /* CustomTextField.swift */,
+			);
+			path = "Appearance Helper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,19 +183,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A26F7A220D0C6200AEC31A /* UIColor + CustomColor.swift in Sources */,
-				C4C36C9A22094D63003ADF72 /* EntriesTableViewController.swift in Sources */,
+				C4C36C9A22094D63003ADF72 /* JournalEntriesTableViewController.swift in Sources */,
 				C4C36C8E22093E62003ADF72 /* LoginViewController.swift in Sources */,
+				C4C3F59422124DD10018DE5B /* CardEntriesTableViewController.swift in Sources */,
 				C4C3F58F220E0B270018DE5B /* CustomView.swift in Sources */,
 				C4C36C90220946EA003ADF72 /* SignupViewController.swift in Sources */,
-				C4C36C9622094CA3003ADF72 /* AddEntryViewController.swift in Sources */,
+				C4C36C9622094CA3003ADF72 /* CardEntriesDetailViewController.swift in Sources */,
+				C4C3F59822124DFD0018DE5B /* JournalTableViewCell.swift in Sources */,
 				C4C36C7C2209399A003ADF72 /* AppDelegate.swift in Sources */,
 				C4C36C9E220B681E003ADF72 /* Exercise.swift in Sources */,
-				C4C36C9222094823003ADF72 /* HomeTabBarController.swift in Sources */,
 				C4A26F76220CF42500AEC31A /* CustomButton.swift in Sources */,
 				C4A26F78220CF6B100AEC31A /* CustomTextField.swift in Sources */,
-				C4C36C9422094C4A003ADF72 /* SettingsViewController.swift in Sources */,
-				C4C36C9822094CFF003ADF72 /* EntriesViewController.swift in Sources */,
+				C4C36C9822094CFF003ADF72 /* JournalEntriesDetailViewController.swift in Sources */,
 				C4C36C9C2209F05F003ADF72 /* NetworkController.swift in Sources */,
+				C4C3F59622124DED0018DE5B /* CardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

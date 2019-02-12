@@ -11,15 +11,27 @@ import Foundation
 
 class NetworkController {
     
+    private (set) var journalObj: [JournalsObj] = []
+    private (set) var exerciseCard: [ExerciseCard] = []
+    
     static let baseURL = URL(string: "https://weightliftingjournallambda.herokuapp.com/")!
     
     
     static func getWorkouts() {
         var request = URLRequest(url: baseURL)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+    }
+    
+    
+    static func createWorkoutJournal(withJournalID id: Int)-> JournalsObj {
+        var request = URLRequest(url: baseURL)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "content-type")
         
     }
+    
     
 
 }

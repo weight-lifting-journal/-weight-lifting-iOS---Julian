@@ -8,7 +8,6 @@
 
 import Foundation
 
-// GET 
 struct Exercise: Codable {
     let journalsObj: [JournalsObj]
     let exerciseCards: [ExerciseCard]
