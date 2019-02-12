@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+
+class NetworkController {
+    
+    static let baseURL = URL(string: "https://weightliftingjournallambda.herokuapp.com/")!
+    
+    
+    static func getWorkouts() {
+        var request = URLRequest(url: baseURL)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+    }
+    
+
+}

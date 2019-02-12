@@ -1,14 +1,14 @@
 //
-//  EntriesTableViewController.swift
+//  CardEntriesTableViewController.swift
 //  Weight Lift
 //
-//  Created by Julian A. Fordyce on 2/4/19.
+//  Created by Julian A. Fordyce on 2/11/19.
 //  Copyright © 2019 Glas Labs. All rights reserved.
 //
 
 import UIKit
 
-class EntriesTableViewController: UITableViewController {
+class CardEntriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
