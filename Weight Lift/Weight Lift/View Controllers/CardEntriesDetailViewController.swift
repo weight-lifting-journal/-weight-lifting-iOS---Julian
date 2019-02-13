@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddEntryViewController: UIViewController {
+class CardEntriesDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +16,9 @@ class AddEntryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveCard(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +28,14 @@ class AddEntryViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Properties
+    @IBOutlet weak var cardJournalTextField: UITextField!
+    @IBOutlet weak var cardExerciseTextField: UITextField!
+    @IBOutlet weak var cardRepsTextField: UITextField!
+    @IBOutlet weak var cardSetsTextField: UITextField!
+    @IBOutlet weak var cardWeightTextField: UITextField!
+    @IBOutlet weak var cardSaveButton: UIButton!
+    
 
 }

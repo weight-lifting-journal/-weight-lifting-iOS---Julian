@@ -8,7 +8,6 @@
 
 import Foundation
 
-// GET 
 struct Exercise: Codable {
     let journalsObj: [JournalsObj]
     let exerciseCards: [ExerciseCard]
@@ -34,4 +33,10 @@ struct JournalsObj: Codable {
     let id: Int
     let date: String
     let region: String
+    
+    init(id: Int, date: String, region: String) {
+        self.id = id
+        self.date = date
+        self.region = region
+    }
 }
