@@ -8,9 +8,8 @@
 
 import UIKit
 
-class JournalEntriesTableViewController: UITableViewController {
+class JournalEntriesTableViewController: UITableViewController, UISearchBarDelegate {
 
-    let networkController = NetworkController()
     
     
     override func viewDidLoad() {
@@ -23,7 +22,6 @@ class JournalEntriesTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return networkController.journalObjs.count
     }
 
@@ -31,14 +29,18 @@ class JournalEntriesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: JournalTableViewCell.reuseIdentifier, for: indexPath) as? JournalTableViewCell else { fatalError("Unable to dequeue cell") }
         
+        let journalObj = networkController.journalObjs[indexPath.row]
+        cell.regionLabel?.text = journalObj.region
+        cell.dateLabel?.text = journalObj.date
+        cell.journalIDLabel?.text = String(journalObj.id)
         
-        
-
-        // Configure the cell...
-
         return cell
     }
     
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +88,6 @@ class JournalEntriesTableViewController: UITableViewController {
     */
     
     // MARK: - Properties
-
+    
+    let networkController = NetworkController()
 }

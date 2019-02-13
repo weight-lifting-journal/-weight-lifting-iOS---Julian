@@ -16,7 +16,7 @@ struct Exercise: Codable {
 struct ExerciseCard: Codable {
     let journalID: Int
     let name: String
-    let reps: String
+    let reps: Int
     let sets: Int
     let weight: String
     

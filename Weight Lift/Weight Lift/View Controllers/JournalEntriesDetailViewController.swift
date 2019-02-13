@@ -18,6 +18,16 @@ class JournalEntriesDetailViewController: UIViewController {
     
     @IBAction func saveJournal(_ sender: Any) {
         
+        guard let journalID = journalTextField.text, !journalID.isEmpty,
+              let date = dateTextField.text, !date.isEmpty,
+              let region = regionTextField.text, !region.isEmpty else { return }
+        
+        NetworkController.createWorkoutJournal(date: date, region: region, journalID: 1) { (error) in
+            if let error = error {
+                NSLog("Could not update activity: \(error)")
+                return
+            }
+        }
     }
     
     /*
@@ -35,6 +45,7 @@ class JournalEntriesDetailViewController: UIViewController {
     @IBOutlet weak var journalTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var regionTextField: UITextField!
-    
     @IBOutlet weak var saveButton: UIButton!
+    
+    let networkController = NetworkController()
 }

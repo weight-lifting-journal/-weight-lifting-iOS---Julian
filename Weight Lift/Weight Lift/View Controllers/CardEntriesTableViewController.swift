@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardEntriesTableViewController: UITableViewController {
+class CardEntriesTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,26 +22,31 @@ class CardEntriesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return networkController.exerciseCard.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.reuseIdentifier, for: indexPath) as? CardTableViewCell else { fatalError("Unable to dequeue cell") }
+        
+        let exerciseCard = networkController.exerciseCard[indexPath.row]
+        
+        cell.journalLabel?.text = String(exerciseCard.journalID)
+        cell.exerciseLabel?.text = exerciseCard.name
+        cell.repsLabel?.text = String(exerciseCard.reps)
+        cell.setsLabel?.text = String(exerciseCard.sets)
+        cell.weightLabel?.text = exerciseCard.weight
 
         return cell
     }
-    */
 
+    
+    
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -86,5 +91,7 @@ class CardEntriesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Properties
+    let networkController = NetworkController()
 }

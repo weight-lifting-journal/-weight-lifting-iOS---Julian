@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text
 
         if (email?.isEmpty)! || (password?.isEmpty)! {
-            displayMessage(userMessage: "All fields are required.")
             return
         }
 
@@ -64,22 +63,8 @@ class LoginViewController: UIViewController {
         
     }
     
-    func displayMessage(userMessage: String) -> Void {
-        DispatchQueue.main.async
-            {
-                let alertController = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    print("Ok button tapped")
-                    DispatchQueue.main.async
-                        {
-                            self.dismiss(animated: true, completion: nil)
-                    }
-                }
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion:nil)
-        }
-    }
+   
+    
   // MARK: - Properties
     
     @IBOutlet weak var imageView: UIImageView!
