@@ -13,7 +13,7 @@ class WorkoutJournal: Equatable, Codable {
     let identifier: String
     let date: String
     let region: String
-    let exerciseCards: [WorkoutJournal.ExerciseCard]
+    var exerciseCards: [WorkoutJournal.ExerciseCard]
     
     init(date: String, identifier: String = UUID().uuidString, region: String, exerciseCards: [WorkoutJournal.ExerciseCard] = []) {
         
