@@ -27,18 +27,21 @@ class JournalEntriesDetailViewController: UIViewController {
                 NSLog("Could not update activity: \(error)")
                 return
             }
+            
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
-    /*
+   
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+
+
     }
-    */
+    
     
     // MARK: - Properties
     
@@ -46,6 +49,8 @@ class JournalEntriesDetailViewController: UIViewController {
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var regionTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    
+    var journalObj: JournalsObj?
     
     let networkController = NetworkController()
 }

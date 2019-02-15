@@ -11,51 +11,30 @@ import Foundation
 
 class NetworkController {
     
-    static let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTQ0MzM1NjUxLCJleHAiOjE1NzU4OTMyNTF9.uqd2OHBYkGQpwjLTPPiPWYkYOKlG7whQDFkk46xGXoE"
+    var workoutJournals: [WorkoutJournal] = []
     
-    static let baseURL = URL(string: "https://weightliftingjournallambda.herokuapp.com/")!
+    static let baseURL = URL(string: "https://fit-me-9b1b0.firebaseio.com/")!
     
-    
-    // Post a workout journal
-    static func postWorkoutJournal(journalObj: JournalsObj, completion: @escaping (Error) -> Void) {
-        
-        let authToken = NetworkController.token
-        let postURL = baseURL.appendingPathComponent("workouts")
-        var request = URLRequest(url: postURL)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "content-type")
-            request.addValue(authToken, forHTTPHeaderField: "Authorization")
-        
-        let journalObj: [String: Any] = ["date": journalObj.date, "region": journalObj.region, "journalID": journalObj.id]
-        let json: Data
-        
-        do {
-            json = try JSONSerialization.data(withJSONObject: journalObj, options: [])
-            request.httpBody = json
-        } catch {
-            print("Can't create workout :(")
-            return
-        }
-        
-        let dataTask = URLSession.shared.dataTask(with: request) { (_, response: URLResponse?, error: Error?) in
-            if error != nil {
-                print("error: \(String(describing: error))")
-                return
-            }
-            if response != nil {
-                print(response!)
-                return
-            }
-        }
-        dataTask.resume()
-    }
     
     // Create a workout journal
-    static func createWorkoutJournal(date: String, region: String, journalID: Int, completion: @escaping (Error?) -> Void) {
+    static func createWorkoutJournal(date: String, region: String,completion: @escaping (Error?) -> Void) {
         
-        let journalObj = JournalsObj(id: journalID, date: date, region: region)
+        let newWorkoutJournal = WorkoutJournal(date: date, region: region)
+        let journalURL = NetworkController.baseURL.appendingPathComponent(newWorkoutJournal.identifier)
+        let jsonJournalURL = journalURL.appendingPathExtension("json")
         
-        postWorkoutJournal(journalObj: journalObj, completion: completion)
+        var request = URLRequest(url: jsonJournalURL)
+        request.httpMethod = "PUT"
+        
+        let encoder = JSONEncoder()
+        
+        do {
+            request.httpBody = try encoder.encode(newWorkoutJournal)
+        } catch {
+            print(NSError())
+            completion(error)
+            return
+        }
         
     }
     

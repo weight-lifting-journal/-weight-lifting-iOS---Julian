@@ -15,7 +15,7 @@ class SignupViewController: UIViewController {
     
     }
 
-
+    static let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTQ0MzM1NjUxLCJleHAiOjE1NzU4OTMyNTF9.uqd2OHBYkGQpwjLTPPiPWYkYOKlG7whQDFkk46xGXoE"
 
     @IBAction func signupButtonTapped(_ sender: Any) {
     
@@ -26,10 +26,12 @@ class SignupViewController: UIViewController {
         }
 
         let url = URL(string: "https://weightliftingjournallambda.herokuapp.com/users/register")!
+        let authToken = SignupViewController.token
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
+        
         request.addValue("application/json", forHTTPHeaderField: "content-type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue(authToken, forHTTPHeaderField: "Authorization")
         let postString = ["email": emailTextField.text, "username": usernameTextField.text, "password": passwordTextField.text] as! [String: String]
 
         do {
@@ -78,6 +80,7 @@ class SignupViewController: UIViewController {
         task.resume()
     }
   
+
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
