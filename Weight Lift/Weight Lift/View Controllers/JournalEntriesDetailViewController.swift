@@ -12,32 +12,38 @@ class JournalEntriesDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     @IBAction func saveJournal(_ sender: Any) {
         
         guard let journalID = journalTextField.text, !journalID.isEmpty,
               let date = dateTextField.text, !date.isEmpty,
-              let region = regionTextField.text, !region.isEmpty else { return }
+              let region = regionTextField.text, !region.isEmpty,
+              let networkController = networkController else { return }
         
-        NetworkController.createWorkoutJournal(date: date, region: region, journalID: 1) { (error) in
+        networkController.createWorkoutJournal(date: date, region: region) { (error) in
             if let error = error {
-                NSLog("Could not update activity: \(error)")
+                print(error)
                 return
-            }
-            
-            self.navigationController?.popViewController(animated: true)
         }
     }
+}
     
    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "journalcell" {
+            guard let journalTVC = segue.destination as? JournalEntriesTableViewController, let journalIndexPath = journalTableVC.tableView.indexPathForSelectedRow else { return }
+            journalTVC.workoutJournal = networkController?.workoutJournals[journalIndexPath.row]
+            journalTVC.networkController = networkController
+            
+        }
 
 
     }
@@ -50,7 +56,8 @@ class JournalEntriesDetailViewController: UIViewController {
     @IBOutlet weak var regionTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
-    var journalObj: JournalsObj?
     
-    let networkController = NetworkController()
+    var workoutJournal: WorkoutJournal?
+    var networkController: NetworkController?
+    let journalTableVC = JournalEntriesTableViewController()
 }

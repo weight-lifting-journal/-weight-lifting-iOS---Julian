@@ -8,10 +8,10 @@
 
 import Foundation
 
-var workoutJournals: [WorkoutJournal] = []
 
 class NetworkController {
     
+    var workoutJournals: [WorkoutJournal] = []
     
     static let baseURL = URL(string: "https://fit-me-9b1b0.firebaseio.com/")!
     
@@ -43,7 +43,7 @@ class NetworkController {
                 return
             }
     
-            workoutJournals.append(newWorkoutJournal)
+            self.workoutJournals.append(newWorkoutJournal)
             completion(nil)
         }.resume()
         
@@ -104,7 +104,7 @@ class NetworkController {
             do {
                 let workoutJournalDictionaries = try decoder.decode([String: WorkoutJournal].self, from: data)
                 let workoutJournal = workoutJournalDictionaries.map({ $0.value })
-                workoutJournals = workoutJournal
+                self.workoutJournals = workoutJournal
                 completion(nil)
             } catch {
                 print(error)
