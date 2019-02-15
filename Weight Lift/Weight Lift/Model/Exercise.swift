@@ -8,35 +8,60 @@
 
 import Foundation
 
-struct Exercise: Codable {
-    let journalsObj: [JournalsObj]
-    let exerciseCards: [ExerciseCard]
-}
-
-struct ExerciseCard: Codable {
-    let journalID: Int
-    let name: String
-    let reps: String
-    let sets: Int
-    let weight: String
+class WorkoutJournal: Equatable, Codable {
     
-    enum CodingKeys: String, CodingKey {
-        case journalID = "journalId"
-        case name
-        case reps
-        case sets
-        case weight
-    }
-}
-
-struct JournalsObj: Codable {
-    let id: Int
+    let identifier: String
     let date: String
     let region: String
+    var exerciseCards: [WorkoutJournal.ExerciseCard]
     
-    init(id: Int, date: String, region: String) {
-        self.id = id
+    init(date: String, identifier: String = UUID().uuidString, region: String, exerciseCards: [WorkoutJournal.ExerciseCard] = []) {
+        
         self.date = date
+        self.identifier = identifier
         self.region = region
+        self.exerciseCards = exerciseCards
+}
+
+struct ExerciseCard: Equatable, Codable {
+    let journalID: String
+    let name: String
+    let reps: String
+    let sets: String
+    let weight: String
+
+    init(journalID: String, name: String, reps: String, sets: String, weight: String ) {
+        self.journalID = journalID
+        self.name = name
+        self.reps = reps
+        self.sets = sets
+        self.weight = weight
     }
 }
+    static func == (lhs: WorkoutJournal, rhs: WorkoutJournal) -> Bool {
+        return lhs.identifier == rhs.identifier && rhs.identifier == lhs.identifier
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        let date = try container.decode(String.self, forKey: .date)
+        let identifier = try container.decode(String.self, forKey: .identifier)
+        let region = try container.decode(String.self, forKey: .region)
+        
+        let exerciseCardsDictionaries = try container.decodeIfPresent([String: ExerciseCard].self, forKey: .exerciseCards)
+        let exerciseCards = exerciseCardsDictionaries?.compactMap({ $0.value }) ?? []
+        
+        self.date = date
+        self.identifier = identifier
+        self.region = region
+        self.exerciseCards = exerciseCards
+    }
+}
+
+
+
+
+
+
+

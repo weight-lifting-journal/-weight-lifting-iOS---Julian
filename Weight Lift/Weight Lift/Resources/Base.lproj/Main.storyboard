@@ -275,7 +275,7 @@
                                     <outlet property="dateLabel" destination="dSx-Dj-iMC" id="rbM-CW-jZB"/>
                                     <outlet property="journalIDLabel" destination="YOC-Uw-ONU" id="68Z-Uf-D1y"/>
                                     <outlet property="regionLabel" destination="4os-W7-oHI" id="DwJ-Rr-S9c"/>
-                                    <segue destination="ohx-7r-ANc" kind="show" id="rTW-Nv-uI3"/>
+                                    <segue destination="t4t-i2-ajd" kind="show" id="vZY-6b-9gq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -288,14 +288,14 @@
                     <navigationItem key="navigationItem" title="Add Journal" id="uY7-fn-AvK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyU-Fw-8gJ">
                             <connections>
-                                <segue destination="ohx-7r-ANc" kind="show" id="iFF-fw-xzA"/>
+                                <segue destination="t4t-i2-ajd" kind="show" id="dtQ-U4-27P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRD-EP-ZKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2901.5999999999999" y="391.62561576354682"/>
+            <point key="canvasLocation" x="3841" y="412"/>
         </scene>
         <!--Add Workout Card-->
         <scene sceneID="vfA-Oe-adP">
@@ -368,7 +368,6 @@
                                     <outlet property="repsLabel" destination="kTP-OT-drF" id="BxC-Ce-Fak"/>
                                     <outlet property="setsLabel" destination="s6m-HY-gWd" id="wny-yh-S2v"/>
                                     <outlet property="weightLabel" destination="GEv-gD-EOO" id="8Si-ud-TSw"/>
-                                    <segue destination="t4t-i2-ajd" kind="show" id="mHU-vf-eMd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -378,18 +377,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Workout Card" id="CDa-wG-tHI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vlc-ec-ENT">
-                            <connections>
-                                <segue destination="t4t-i2-ajd" kind="show" id="cFY-de-MjI"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vlc-ec-ENT"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fd5-yV-zgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5008.8000000000002" y="391.62561576354682"/>
+            <point key="canvasLocation" x="5639" y="412"/>
         </scene>
-        <!--Journal Entries Detail View Controller-->
+        <!--Add Workout Journal-->
         <scene sceneID="cQh-Xg-en0">
             <objects>
                 <viewController id="ohx-7r-ANc" customClass="JournalEntriesDetailViewController" customModule="Weight_Lift" customModuleProvider="target" sceneMemberID="viewController">
@@ -489,7 +484,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="xWV-Ct-wiG" kind="show" id="AXF-fD-T3f"/>
+                                    <action selector="saveJournal:" destination="ohx-7r-ANc" eventType="touchUpInside" id="Gvf-36-I31"/>
+                                    <segue destination="uGj-MF-2ef" kind="show" identifier="ShowTableView" id="RDa-4s-TpX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks good?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxb-kl-B9v">
@@ -518,10 +514,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mmm-bR-Q59"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add Workout Journal" id="YMn-ML-Mfn">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="jfa-IK-kxR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="hdO-dO-sjz" id="4wH-bb-uio"/>
+                        <outlet property="journalTextField" destination="sI1-Zf-Yhz" id="BjT-ys-Rhh"/>
+                        <outlet property="regionTextField" destination="rP6-HM-olO" id="AWG-Ip-WWR"/>
+                        <outlet property="saveButton" destination="9Kj-HN-nYf" id="aJJ-uO-UTO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK9-Yv-AcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4054" y="392"/>
+            <point key="canvasLocation" x="2903" y="412"/>
         </scene>
         <!--Card Entries Detail View Controller-->
         <scene sceneID="V5j-G4-iXy">
@@ -694,6 +699,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveCard:" destination="t4t-i2-ajd" eventType="touchUpInside" id="phL-EZ-UIY"/>
+                                    <segue destination="xWV-Ct-wiG" kind="show" identifier="cardcell" id="eSj-z6-92N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -722,7 +728,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKy-8N-Fkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5974" y="392"/>
+            <point key="canvasLocation" x="4692" y="412"/>
         </scene>
         <!--Entries-->
         <scene sceneID="oHt-3Q-zFg">
@@ -736,12 +742,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uGj-MF-2ef" kind="relationship" relationship="rootViewController" id="clr-83-opP"/>
+                        <segue destination="ohx-7r-ANc" kind="relationship" relationship="rootViewController" id="lBs-Et-clI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYE-Pm-DN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="392"/>
+            <point key="canvasLocation" x="1905" y="412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4W1-EW-Mfl">
@@ -766,7 +772,6 @@
         <image name="logo-test" width="500" height="252"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cFY-de-MjI"/>
-        <segue reference="rTW-Nv-uI3"/>
+        <segue reference="dtQ-U4-27P"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,11 +12,28 @@ class CardEntriesDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navigationItem.title = workoutJournal?.identifier
     }
     
     @IBAction func saveCard(_ sender: Any) {
+        guard let reps = cardRepsTextField.text,
+            let sets = cardSetsTextField.text,
+            let weight = cardWeightTextField.text,
+            let identifier = cardJournalTextField.text,
+            let name = cardExerciseTextField.text,
+            let workoutJournal = workoutJournal,
+            let networkController = networkController else { return }
+        
+        networkController.createExerciseCard(workoutJournal: workoutJournal, journalID: identifier, name: name, reps: reps, sets: sets, weight: weight) { (error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+                
     }
     
     /*
@@ -38,4 +55,6 @@ class CardEntriesDetailViewController: UIViewController {
     @IBOutlet weak var cardSaveButton: UIButton!
     
 
+    var workoutJournal: WorkoutJournal?
+    var networkController: NetworkController?
 }

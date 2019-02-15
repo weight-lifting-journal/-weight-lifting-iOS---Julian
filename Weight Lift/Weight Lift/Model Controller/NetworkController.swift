@@ -11,46 +11,116 @@ import Foundation
 
 class NetworkController {
     
-   
+    var workoutJournals: [WorkoutJournal] = []
     
-    static let baseURL = URL(string: "https://weightliftingjournallambda.herokuapp.com/")!
+    static let baseURL = URL(string: "https://fit-me-9b1b0.firebaseio.com/")!
     
     
     // Create a workout journal
-        static func createWorkoutJournal() {
-            var request = URLRequest(url: baseURL)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "content-type")
-    
+     func createWorkoutJournal(date: String, region: String, completion: @escaping (Error?) -> Void) {
+        
+        let newWorkoutJournal = WorkoutJournal(date: date, region: region)
+        self.workoutJournals.append(newWorkoutJournal)
+        let journalURL = NetworkController.baseURL.appendingPathComponent(newWorkoutJournal.identifier)
+        let jsonJournalURL = journalURL.appendingPathExtension("json")
+        
+        var request = URLRequest(url: jsonJournalURL)
+        request.httpMethod = "PUT"
+        
+        let encoder = JSONEncoder()
+        
+        do {
+            request.httpBody = try encoder.encode(newWorkoutJournal)
+        } catch {
+            print(NSError())
+            completion(error)
+            return
         }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
     
-    // Get a workout journal
-    static func getWorkoutJournal() {
-        var request = URLRequest(url: baseURL)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+            completion(nil)
+        }.resume()
         
     }
     
-    // Update a workout journal
-    static func updateWorkoutJournal() {
-        var request = URLRequest(url: baseURL)
-        request.httpMethod = "PUT"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
+    // Create a new exercise card
+    func createExerciseCard(workoutJournal: WorkoutJournal, journalID: String, name: String, reps: String, sets: String, weight: String , completion: @escaping (Error?) -> Void) {
+        
+        let newExerciseCard = WorkoutJournal.ExerciseCard(journalID: journalID, name: name, reps: reps, sets: sets, weight: weight)
+        
+        let workoutJournalURL = NetworkController.baseURL.appendingPathComponent(workoutJournal.identifier)
+        
+        let exerciseURL = workoutJournalURL.appendingPathComponent("exerciseCards")
+        let jsonExerciseURL = exerciseURL.appendingPathExtension("json")
+        
+        var url = URLRequest(url: jsonExerciseURL)
+        url.httpMethod = "POST"
+        
+        let encoder = JSONEncoder()
+        
+        do {
+            url.httpBody = try encoder.encode(newExerciseCard)
+            
+        } catch {
+            print(NSError())
+            completion(error)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (_, _, error) in
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
+            workoutJournal.exerciseCards.append(newExerciseCard)
+            completion(nil)
+        }.resume()
+  }
+    
+    // Get workout journal
+    func getWorkoutJournals(completion: @escaping (Error?) -> Void) {
+        let url = NetworkController.baseURL.appendingPathExtension("json")
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print(error)
+                completion(error)
+                return
+            }
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            
+            do {
+                let workoutJournalDictionaries = try decoder.decode([String: WorkoutJournal].self, from: data)
+                let workoutJournal = workoutJournalDictionaries.map({ $0.value })
+                self.workoutJournals = workoutJournal
+                completion(nil)
+            } catch {
+                print(error)
+                completion(error)
+                return
+            }
+        }.resume()
     }
     
-    // Delete a workout journal
-    static func deleteWorkoutJournal() {
-        var request = URLRequest(url: baseURL)
-        request.httpMethod = "DELETE"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
-    }
+    
+    
 
     
     // MARK: - Properties
     
-    private(set) var journalObjs: [JournalsObj] = []
-    private (set) var exerciseCard: [ExerciseCard] = []
-    
+ 
 
 }

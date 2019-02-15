@@ -20,17 +20,15 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text
 
         if (email?.isEmpty)! || (password?.isEmpty)! {
-            displayMessage(userMessage: "All fields are required.")
             return
         }
 
         let baseURL = URL(string: "https://weightliftingjournallambda.herokuapp.com/users/login")!
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTQ0MzM1NjUxLCJleHAiOjE1NzU4OTMyNTF9.uqd2OHBYkGQpwjLTPPiPWYkYOKlG7whQDFkk46xGXoE"
+        let authToken = SignupViewController.token
         var request = URLRequest(url: baseURL)
 
         request.httpMethod = "POST"
-        request.addValue(token, forHTTPHeaderField: "content-type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue(authToken, forHTTPHeaderField: "Authorization")
         
 
         let postString = ["email": email, "password": password] as! [String: String]
@@ -41,17 +39,19 @@ class LoginViewController: UIViewController {
             NSLog("error creating username and password: \(error)")
             return
         }
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 NSLog("error creating user data: \(error)")
                 //completion(error)
                 return
             }
+            if response != nil {
+                print(response!)
+                return
+            }
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
                 if let parseJSON = json {
-                    //                    let accessToken = parseJSON["token"] as? String
-                    //                    let id = parseJSON["id"] as? String
                     _ = parseJSON["token"] as? String
                     _ = parseJSON["id"] as? String
                 }
@@ -64,22 +64,8 @@ class LoginViewController: UIViewController {
         
     }
     
-    func displayMessage(userMessage: String) -> Void {
-        DispatchQueue.main.async
-            {
-                let alertController = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
-                    print("Ok button tapped")
-                    DispatchQueue.main.async
-                        {
-                            self.dismiss(animated: true, completion: nil)
-                    }
-                }
-                alertController.addAction(action)
-                self.present(alertController, animated: true, completion:nil)
-        }
-    }
+   
+    
   // MARK: - Properties
     
     @IBOutlet weak var imageView: UIImageView!
