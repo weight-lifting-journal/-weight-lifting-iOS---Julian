@@ -61,17 +61,8 @@ class SignupViewController: UIViewController {
 
                 let userID = parseJSON["userID"] as? String
                 print("User id: \(String(describing: userID!))")
-
-                if (userID?.isEmpty)! {
-                    // Display an Alert dialog with a friendly error message
-                    return
-                } else {
-                }
-
             } else {
-                //Display an Alert dialog with a friendly error message
-            }
-
+        }
         } catch {
             print(error)
             }

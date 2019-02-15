@@ -67,4 +67,6 @@ class JournalEntriesTableViewController: UITableViewController, UISearchBarDeleg
     var networkController: NetworkController?
     var workoutJournal: WorkoutJournal?
     
+    
+    
 }

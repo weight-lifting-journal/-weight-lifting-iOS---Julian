@@ -23,8 +23,8 @@ class JournalEntriesDetailViewController: UIViewController {
         
         guard let journalID = journalTextField.text, !journalID.isEmpty,
               let date = dateTextField.text, !date.isEmpty,
-              let region = regionTextField.text, !region.isEmpty,
-              let networkController = networkController else { return }
+              let region = regionTextField.text, !region.isEmpty
+            else { return }
         
         networkController.createWorkoutJournal(date: date, region: region) { (error) in
             if let error = error {
@@ -38,11 +38,9 @@ class JournalEntriesDetailViewController: UIViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "journalcell" {
-            guard let journalTVC = segue.destination as? JournalEntriesTableViewController, let journalIndexPath = journalTableVC.tableView.indexPathForSelectedRow else { return }
-            journalTVC.workoutJournal = networkController?.workoutJournals[journalIndexPath.row]
+        if segue.identifier == "ShowTableView" {
+            let journalTVC = segue.destination as! JournalEntriesTableViewController
             journalTVC.networkController = networkController
-            
         }
 
 
@@ -58,6 +56,6 @@ class JournalEntriesDetailViewController: UIViewController {
     
     
     var workoutJournal: WorkoutJournal?
-    var networkController: NetworkController?
+    var networkController = NetworkController()
     let journalTableVC = JournalEntriesTableViewController()
 }

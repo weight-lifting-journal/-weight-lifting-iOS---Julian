@@ -286,7 +286,11 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="l38-1K-L4G"/>
                     <navigationItem key="navigationItem" title="Add Journal" id="uY7-fn-AvK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyU-Fw-8gJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyU-Fw-8gJ">
+                            <connections>
+                                <segue destination="t4t-i2-ajd" kind="show" id="dtQ-U4-27P"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRD-EP-ZKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,7 +382,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fd5-yV-zgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5649" y="392"/>
+            <point key="canvasLocation" x="5639" y="412"/>
         </scene>
         <!--Add Workout Journal-->
         <scene sceneID="cQh-Xg-en0">
@@ -480,7 +484,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uGj-MF-2ef" kind="show" identifier="journalcell" id="0Gg-D1-QMB"/>
+                                    <action selector="saveJournal:" destination="ohx-7r-ANc" eventType="touchUpInside" id="Gvf-36-I31"/>
+                                    <segue destination="uGj-MF-2ef" kind="show" identifier="ShowTableView" id="RDa-4s-TpX"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks good?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxb-kl-B9v">
@@ -509,7 +514,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mmm-bR-Q59"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Workout Journal" id="YMn-ML-Mfn"/>
+                    <navigationItem key="navigationItem" title="Add Workout Journal" id="YMn-ML-Mfn">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="jfa-IK-kxR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="hdO-dO-sjz" id="4wH-bb-uio"/>
+                        <outlet property="journalTextField" destination="sI1-Zf-Yhz" id="BjT-ys-Rhh"/>
+                        <outlet property="regionTextField" destination="rP6-HM-olO" id="AWG-Ip-WWR"/>
+                        <outlet property="saveButton" destination="9Kj-HN-nYf" id="aJJ-uO-UTO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WK9-Yv-AcO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -734,7 +747,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYE-Pm-DN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950" y="392"/>
+            <point key="canvasLocation" x="1905" y="412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4W1-EW-Mfl">
@@ -758,4 +771,7 @@
     <resources>
         <image name="logo-test" width="500" height="252"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dtQ-U4-27P"/>
+    </inferredMetricsTieBreakers>
 </document>

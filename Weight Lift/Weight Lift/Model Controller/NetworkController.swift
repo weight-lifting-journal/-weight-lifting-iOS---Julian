@@ -17,9 +17,10 @@ class NetworkController {
     
     
     // Create a workout journal
-     func createWorkoutJournal(date: String, region: String,completion: @escaping (Error?) -> Void) {
+     func createWorkoutJournal(date: String, region: String, completion: @escaping (Error?) -> Void) {
         
         let newWorkoutJournal = WorkoutJournal(date: date, region: region)
+        self.workoutJournals.append(newWorkoutJournal)
         let journalURL = NetworkController.baseURL.appendingPathComponent(newWorkoutJournal.identifier)
         let jsonJournalURL = journalURL.appendingPathExtension("json")
         
@@ -43,7 +44,7 @@ class NetworkController {
                 return
             }
     
-            self.workoutJournals.append(newWorkoutJournal)
+        
             completion(nil)
         }.resume()
         

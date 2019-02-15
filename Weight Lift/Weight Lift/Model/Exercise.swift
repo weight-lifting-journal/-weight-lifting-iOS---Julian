@@ -18,7 +18,7 @@ class WorkoutJournal: Equatable, Codable {
     init(date: String, identifier: String = UUID().uuidString, region: String, exerciseCards: [WorkoutJournal.ExerciseCard] = []) {
         
         self.date = date
-        self.identifier = date
+        self.identifier = identifier
         self.region = region
         self.exerciseCards = exerciseCards
 }
